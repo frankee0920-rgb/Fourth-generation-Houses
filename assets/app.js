@@ -9,6 +9,7 @@ function nav(){
   const items = [
     ['index.html','首页'],
     ['cases.html','案例库'],
+    ['research.html','专题分析'],
     ['policy.html','政策解读'],
     ['compare.html','案例对比'],
     ['issues.html','问题与风险'],
