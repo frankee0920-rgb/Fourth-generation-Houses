@@ -382,3 +382,51 @@ img{max-width:100%}
 .source-item b{display:block;line-height:1.45}.source-item small{display:block;color:#9eaaa2;margin-top:5px}.source-item i{font-style:normal;font-size:11px;color:#b9c8be}
 @media(max-width:900px){.verdict-strip,.tradeoff-grid{grid-template-columns:1fr}.strategy-row{grid-template-columns:1fr}.strategy-copy{position:static}.study-gallery{grid-template-columns:repeat(2,1fr)}.study-analysis,.source-register{grid-template-columns:1fr}.source-item:nth-child(odd){border-right:0}.study-heading{grid-template-columns:55px 1fr}.study-heading a{grid-column:2}.source-section{padding-left:20px;padding-right:20px}}
 @media(max-width:560px){.strategy-images{grid-template-columns:1fr}.study-gallery img,.study-gallery figure:first-child img{height:210px}.study-gallery figure:first-child{grid-column:span 2;grid-row:auto}.study-heading h3{font-size:24px}}
+
+.strategy-chapter,.case-chapter{padding:54px 0;border-top:1px solid #bec8c1}
+.strategy-chapter>header{max-width:900px;margin-bottom:32px}
+.strategy-chapter>header>span,.study-heading small{font-size:11px;letter-spacing:.15em;color:#a85f29;text-transform:uppercase}
+.strategy-chapter>header h3{font-family:var(--serif);font-size:34px;line-height:1.28;margin:10px 0 16px;max-width:950px}
+.strategy-chapter>header p,.case-intro{font-size:17px;line-height:1.85;color:#4f5d55;max-width:920px}
+.strategy-body{display:grid;grid-template-columns:340px 1fr;gap:38px;align-items:start}
+.strategy-body>aside{position:sticky;top:96px}
+.point-list{display:grid;gap:1px;background:#cfd5d0;border:1px solid #cfd5d0}
+.point-list>div{padding:17px 18px;background:#f7f7f3}
+.point-list b{font-size:14px;color:#1c4934}
+.point-list p{margin:6px 0 0;line-height:1.65;color:#59645e}
+.chapter-verdict{margin-top:16px;padding:20px;background:#203d2e;color:#f3f6f2}
+.chapter-verdict b{font-size:12px;letter-spacing:.1em;color:#cbd8cf}
+.chapter-verdict p{margin:8px 0 0;line-height:1.75}
+.annotated-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.annotated-figure{margin:0;background:#f2f1eb;border:1px solid #d9ddd8;display:flex;flex-direction:column}
+.annotated-figure img{display:block;width:100%;height:320px;object-fit:contain;background:#e8ebe6}
+.annotated-figure figcaption{display:block;padding:16px 18px;line-height:1.65}
+.annotated-figure figcaption b{display:block;font-family:var(--serif);font-size:18px;margin-bottom:5px}
+.annotated-figure figcaption span{display:block;color:#5e6862;font-size:13px}
+.strategy-chapter .annotated-gallery .annotated-figure:only-child{grid-column:1/-1}
+.case-chapter{padding-top:30px;margin-bottom:70px;border-top:4px solid #253f31}
+.case-intro{margin:0 0 24px}
+.case-chapter>.point-list{grid-template-columns:repeat(3,1fr);margin-bottom:24px}
+.case-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+.case-gallery .annotated-figure:first-child{grid-column:span 2}
+.case-gallery .annotated-figure:first-child img{height:450px}
+.case-gallery .annotated-figure img{height:260px}
+.case-assessment{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:18px;background:#cbd2cc;border:1px solid #cbd2cc}
+.case-assessment section{padding:24px;background:#f7f7f3}
+.case-assessment section>span{font-size:12px;letter-spacing:.1em;color:#24543b}
+.case-assessment section:nth-child(2)>span{color:#a04e36}
+.case-assessment ul{margin:14px 0 0;padding-left:20px;line-height:1.8}
+.zmd-conclusion{grid-column:1/-1!important;background:#203d2e!important;color:#f3f6f2}
+.zmd-conclusion span{color:#cbd8cf!important}.zmd-conclusion p{font-family:var(--serif);font-size:20px;line-height:1.7;margin:10px 0 0;max-width:1000px}
+@media(max-width:900px){
+  .strategy-body{grid-template-columns:1fr}.strategy-body>aside{position:static}
+  .case-chapter>.point-list{grid-template-columns:1fr}
+  .case-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .case-assessment{grid-template-columns:1fr}.zmd-conclusion{grid-column:auto!important}
+}
+@media(max-width:560px){
+  .strategy-chapter>header h3{font-size:27px}.strategy-chapter>header p,.case-intro{font-size:15px}
+  .annotated-gallery,.case-gallery{grid-template-columns:1fr}
+  .case-gallery .annotated-figure:first-child{grid-column:auto}
+  .annotated-figure img,.case-gallery .annotated-figure img,.case-gallery .annotated-figure:first-child img{height:245px}
+}
