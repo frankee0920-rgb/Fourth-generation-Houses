@@ -8,13 +8,13 @@
 <meta property="og:title" content="第四代住宅案例库">
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/styles.css?v=henan2">
+<link rel="stylesheet" href="assets/styles.css?v=full2">
 </head>
 <body><div class="shell">
 <main class="page">
   <section class="page-hero">
     <div><div class="eyebrow">CASE LIBRARY</div><h1>第四代住宅案例库</h1><p>案例按“全国代表、全国交付、河南、驻马店”逐步扩展。点击卡片进入独立案例页，避免长页面连续堆叠。</p></div>
-    <aside class="page-note">当前为首批结构稿。正式研究阶段将补充总图、户型、剖面、实景、技术节点、市场信息和来源证据。</aside>
+    <aside class="page-note">只有完成原图、来源、证据边界和独立图文页的项目进入核心案例；其他项目只保留为候选线索。</aside>
   </section>
   <div class="toolbar-row">
     <input id="search" class="search" placeholder="搜索项目、城市、开发商或标签">
@@ -26,10 +26,11 @@
       <button class="chip" data-filter="已交付">已交付</button>
     </div>
   </div>
-  <div id="case-grid" class="case-grid"></div>
+  <section class="section compact-section"><div class="section-head"><div class="section-title"><small>COMPLETE STUDIES</small><h2>核心图文案例</h2></div><p>当前均有专业设计机构原图和独立证据审计。</p></div><div id="case-grid" class="case-grid"></div></section>
+  <section class="section"><div class="section-head"><div class="section-title"><small>RESEARCH QUEUE</small><h2>候选线索台账</h2></div><p>未完成图纸与来源核验，不与核心案例混排。</p></div><div id="candidate-list" class="candidate-list"></div></section>
 </main></div>
 <script src="assets/data.js"></script>
 <script src="assets/featured-case.js"></script>
-<script src="assets/app.js?v=henan2"></script>
+<script src="assets/app.js?v=full2"></script>
 <script src="assets/cases.js"></script>
 </body></html>

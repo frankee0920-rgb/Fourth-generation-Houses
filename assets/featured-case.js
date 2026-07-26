@@ -49,7 +49,20 @@
       cover:"assets/cases/weilai-tianjing/garden-render.jpg"
     }
   ];
-  [item,...henanCases].reverse().forEach(entry=>{
+  const longji = {
+    id:"longji-future-forest",name:"龙记·未来城市森林",city:"西安都市圈",region:"全国专业案例",
+    developer:"龙记泰信",status:"设计方案 / 建成待核",delivery:"交付与入住状态待核",area:"116–135㎡",
+    type:"T3 / T4主流改善",garden:"两层通高空中庭院",climate:"寒冷 / 夏热冬冷过渡参考",
+    summary:"徐辉设计2022年公开的“类四代住宅”实践，以116–135㎡主流改善面积段、T3/T4楼型和两层通高庭院为重点，适合与超大户型案例形成对照。",
+    why:"原始发布包含规划生成、复合景观体系、剖面和户型图，能够同时阅读住区、单体与套型。",
+    spatial:["T3/T4楼型","116–135㎡三四开间","两层通高空中庭院"],
+    technical:["3.15m标准层高","地面+层间绿化","节点和建成资料待补"],
+    operation:["建成与入住资料未公开","不评价长期绿化维护"],tags:["徐辉设计","2022","主流改善","平面+剖面"],
+    confidence:"A（设计陈述）/ C（建成使用）",
+    sourceNote:"主要来源：《龙记未来城市森林｜徐辉设计》，ARCHINA，2022。建成、交付及入住资料待补。",
+    cover:"assets/cases/longji-forest/cover.jpg"
+  };
+  [item,...henanCases,longji].reverse().forEach(entry=>{
     if (!window.SITE_DATA.cases.some(c=>c.id===entry.id)) window.SITE_DATA.cases.unshift(entry);
   });
 })();

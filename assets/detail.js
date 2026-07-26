@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   document.title = `${c.name}｜${D.meta.title}`;
   root.innerHTML = c.id === "huahong-yunshu" ? renderHuahong(c)
-    : ["jianzhong-jiuyue-yunzhu","shangqiu-weilai-tianjing"].includes(c.id) ? renderHenanCase(c)
+    : ["jianzhong-jiuyue-yunzhu","shangqiu-weilai-tianjing","longji-future-forest"].includes(c.id) ? renderHenanCase(c)
     : renderGeneric(c);
 });
 
@@ -96,11 +96,39 @@ function renderHenanCase(c) {
         ["建成运营","可确认进入施工阶段","整体交付、入住和维护资料缺失"]
       ],
       transfer:"商丘与驻马店同属河南地级市，气候和市场层级更接近。该案例可用于比较122–244㎡产品梯度、奇偶层组织及工程协同深度，但不能直接推导驻马店的总价接受度。"
+    },
+    "longji-future-forest": {
+      no:"04", year:"2022", designer:"徐辉设计", base:"assets/cases/longji-forest/",
+      source:"https://www.archina.com/index.php/works/index/show/id/13531",
+      lead:"主流改善面积段的“类四代住宅”：把116–135㎡、T3/T4楼型、3.15m层高和两层通高庭院放进同一套住区系统。",
+      facts:[["设计机构","徐辉设计"],["户型面积","116–135㎡"],["楼型","T3 / T4"],["标准层高","3.15m"],["公开时间","2022"],["建成证据","公开资料未覆盖"]],
+      plans:[
+        ["plan.png","典型户型原图","原图展示三/四开间住宅与南向空中庭院的直接关系。"],
+        ["section.png","两层通高庭院剖面","剖面连续展示层间庭院及上下户关系，是判断“通高”而非普通阳台的直接图纸。"]
+      ],
+      planNotes:[
+        ["设计方陈述","徐辉设计称项目以T4与T3的116–135㎡产品为主，采用私家电梯厅、3.15m层高和两层通高空中花园。"],
+        ["原图可复核","公开平面与剖面支持户型面积段、南向庭院及层间错位关系的基本阅读。"],
+        ["仍然缺失","奇偶层完整成对户型、结构节点、防水排水、消防专项和建成实景未公开。"]
+      ],
+      other:[
+        ["planning-process.png","规划生成过程","原图展示从场地容量到景观中心和楼栋组织的推演。"],
+        ["landscape-system.png","地面与层间复合景观","设计方提出“地面绿化+层间绿化”的多维景观结构。"],
+        ["facade.jpg","单体立面效果","两层通高庭院形成错落的立面节奏；该图为效果表达。"],
+        ["garden.gif","庭院空间效果","用于理解室内外关系，不作为交付证明。"]
+      ],
+      audit:[
+        ["面积与楼型","设计方明确116–135㎡、T3/T4","各户型面积表与标准层组合待补"],
+        ["平面剖面","公开一张户型及连续剖面","奇偶层成套图纸待补"],
+        ["景观系统","规划生成和层间绿化示意公开","植物、荷载、排水与维护方案待补"],
+        ["建成运营","无专业交付后资料","不能评价施工一致性和长期使用"]
+      ],
+      transfer:"相比280㎡超大户型，本案116–135㎡面积段更接近驻马店主流改善研究的现实区间。可以用于讨论庭院尺度与总面积的平衡，但西安都市圈的政策、日照和市场条件仍需重新核对。"
     }
   };
   const x=configs[c.id];
   return `
-  <div class="breadcrumb"><a href="cases.html">案例库</a><span>/</span><span>河南深度案例 ${x.no}</span></div>
+  <div class="breadcrumb"><a href="cases.html">案例库</a><span>/</span><span>专业深度案例 ${x.no}</span></div>
   <section class="case-study-hero henan-hero"><div><span class="eyebrow">HENAN CASE ${x.no} · ${x.year}</span><h1>${c.name}</h1><p class="hero-lead">${x.lead}</p>
   <div class="tags"><span class="tag">${c.city}</span><span class="tag">${x.designer}</span><span class="tag">专业设计资料</span><span class="tag">建成结论待核</span></div></div>
   <aside class="evidence-panel"><div><span>设计资料</span><strong>A</strong><small>设计机构原始发布</small></div><div><span>工程状态</span><strong>B/C</strong><small>按公开照片限定</small></div><div><span>入住反馈</span><strong>—</strong><small>尚无专业评估</small></div></aside></section>
