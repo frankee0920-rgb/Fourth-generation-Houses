@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   const grid=document.getElementById('case-grid');
   const search=document.getElementById('search');
   let filter='全部';
-  const coreIds=['huahong-yunshu','jianzhong-jiuyue-yunzhu','shangqiu-weilai-tianjing','longji-future-forest'];
+  const coreIds=[
+    'huahong-yunshu','jianzhong-jiuyue-yunzhu','shangqiu-weilai-tianjing','longji-future-forest',
+    'nanyang-garden-residence','zhengzhou-duplex-sky-villa','boqun-yuexiwan','yudu-longshui-yunjing'
+  ];
   function draw(){
     const q=search.value.trim().toLowerCase();
     const match=c=>(filter==='全部'||c.region.includes(filter)||c.status===filter) && (!q||JSON.stringify(c).toLowerCase().includes(q));

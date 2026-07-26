@@ -7,10 +7,72 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
   document.title = `${c.name}｜${D.meta.title}`;
-  root.innerHTML = c.id === "huahong-yunshu" ? renderHuahong(c)
+  root.innerHTML = window.WECHAT_CASES?.some(x=>x.id===c.id) ? renderWechatCase(c)
+    : c.id === "huahong-yunshu" ? renderHuahong(c)
     : ["jianzhong-jiuyue-yunzhu","shangqiu-weilai-tianjing","longji-future-forest"].includes(c.id) ? renderHenanCase(c)
     : renderGeneric(c);
 });
+
+function renderWechatCase(c) {
+  const figure = ([file,title,note]) => `<figure class="annotated-figure">
+    <a href="assets/wechat/${file}" target="_blank"><img src="assets/wechat/${file}" loading="lazy" alt="${c.name}：${title}"></a>
+    <figcaption><b>${title}</b><span>${note}</span></figcaption>
+  </figure>`;
+  return `
+    <div class="breadcrumb"><a href="cases.html">案例库</a><span>/</span><span>${c.city}专业案例</span></div>
+    <section class="case-study-hero henan-hero">
+      <div><span class="eyebrow">${c.region} · ${c.year}</span><h1>${c.name}</h1><p class="hero-lead">${c.lead}</p>
+      <div class="tags">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>
+      <aside class="evidence-panel">
+        <div><span>设计资料</span><strong>A</strong><small>${c.designer}</small></div>
+        <div><span>建成使用</span><strong>C</strong><small>仍需补充验证</small></div>
+        <div><span>原始来源</span><strong>1</strong><small>专业公众号文章</small></div>
+      </aside>
+    </section>
+    <nav class="case-toc"><a href="#facts">项目边界</a><a href="#drawings">图纸解读</a><a href="#assessment">优缺点</a><a href="#zmd">驻马店启示</a><a href="#source">原始来源</a></nav>
+
+    <section id="facts" class="study-section">
+      <div class="section-kicker">01 / PROJECT SCOPE</div><h2>先确认项目定位，再讨论是否值得借鉴</h2>
+      <p class="section-intro">${c.summary}</p>
+      <div class="fact-strip">${c.facts.map(([k,v])=>`<div><span>${k}</span><strong>${v}</strong></div>`).join('')}</div>
+      <div class="boundary-note"><strong>证据边界</strong><p>${c.sourceNote} 本页对图片作建筑设计解读，不把效果图、文章指标或设计方陈述自动等同于审批结果、销售合同和交付实物。</p></div>
+    </section>
+
+    <section id="drawings" class="study-section">
+      <div class="section-kicker">02 / ILLUSTRATED READING</div><h2>从规划、立面到户型逐图阅读</h2>
+      <p class="section-intro">下面每张图均说明“图纸能够证明什么”和“还不能证明什么”。点击图片可查看清晰原图。</p>
+      <div class="annotated-gallery case-gallery">${c.images.map(figure).join('')}</div>
+    </section>
+
+    <section id="assessment" class="study-section">
+      <div class="section-kicker">03 / OBJECTIVE ASSESSMENT</div><h2>可借鉴之处与不能跳过的风险</h2>
+      <div class="case-assessment">
+        <section><span>可借鉴</span><ul>${c.strengths.map(x=>`<li>${x}</li>`).join('')}</ul></section>
+        <section><span>不能跳过的风险</span><ul>${c.risks.map(x=>`<li>${x}</li>`).join('')}</ul></section>
+      </div>
+      <div class="audit-table-wrap"><table class="audit-table">
+        <thead><tr><th>研究维度</th><th>当前可确认</th><th>下一步需要的证据</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><th>产品定位</th><td>${c.type}；${c.area}</td><td>审批面积表、完整奇偶层户型</td><td><span class="status cautious">部分确认</span></td></tr>
+          <tr><th>庭院机制</th><td>${c.garden}</td><td>典型剖面、视线和日照计算</td><td><span class="status cautious">设计可读</span></td></tr>
+          <tr><th>工程系统</th><td>${c.technical.join('；')}</td><td>结构、防水排水、消防专项和节点大样</td><td><span class="status pending">待专项</span></td></tr>
+          <tr><th>长期使用</th><td>${c.operation.join('；')}</td><td>交付实景、物业文件、住户及跨季节观察</td><td><span class="status pending">不能评价</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="zmd" class="study-section">
+      <div class="section-kicker">04 / ZHUMADIAN</div><h2>对驻马店的限定性参照</h2>
+      <div class="critical-note"><strong>只转移具有相同前提的经验</strong><p>${c.transfer}</p></div>
+      <p><a class="primary-btn" href="research.html#henan-studies">返回专题中的河南横向分析 <span>→</span></a></p>
+    </section>
+
+    <section id="source" class="study-section source-section">
+      <div class="section-kicker">05 / SOURCE</div><h2>原始来源</h2>
+      <div class="source-row"><b>A</b><div><a href="${c.source}" target="_blank" rel="noopener">${c.name}专业设计文章</a><p>${c.designer}相关项目发布。图片版权归原设计及发布机构所有，本页用于非商业研究与评论。</p></div></div>
+      <div class="source-row"><b>待补</b><div><strong>审批、施工图、交付与入住后资料</strong><p>资料补齐后再提高案例的工程和使用证据等级。</p></div></div>
+    </section>`;
+}
 
 function renderGeneric(c) {
   return `
