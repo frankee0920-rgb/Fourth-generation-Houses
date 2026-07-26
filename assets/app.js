@@ -29,7 +29,15 @@ function nav(){
         <div class="header-actions">
           <button class="mode-btn active" data-mode="research">研究</button>
           <button class="mode-btn" data-mode="presentation">汇报</button>
+          <button class="mobile-nav-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">菜单</button>
         </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="移动端导航">
+          ${items.map(([href,label])=>`<a class="${current===href?'active':''}" href="${href}">${label}</a>`).join('')}
+          <div class="mobile-mode-actions" aria-label="阅读模式">
+            <button class="mode-btn active" data-mode="research">研究模式</button>
+            <button class="mode-btn" data-mode="presentation">汇报模式</button>
+          </div>
+        </nav>
       </div>
     </header>`;
 }
@@ -46,6 +54,13 @@ function boot(){
   const mode=localStorage.getItem('siteMode')||'research';
   setMode(mode);
   document.querySelectorAll('.mode-btn').forEach(btn=>btn.onclick=()=>setMode(btn.dataset.mode));
+  const menuButton=document.querySelector('.mobile-nav-btn');
+  const mobileNav=document.querySelector('.mobile-nav');
+  menuButton?.addEventListener('click',()=>{
+    const open=mobileNav.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded',String(open));
+    menuButton.textContent=open?'关闭':'菜单';
+  });
 }
 function setMode(mode){
   document.body.classList.toggle('presentation',mode==='presentation');

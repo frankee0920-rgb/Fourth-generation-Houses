@@ -45,6 +45,21 @@ img{max-width:100%}
   padding:10px 13px;border-radius:999px;white-space:nowrap
 }
 .main-nav a:hover,.main-nav a.active{background:var(--soft);color:var(--accent)}
+.mobile-nav-btn,.mobile-nav{display:none}
+.mobile-nav-btn{
+  border:1px solid var(--line);background:var(--paper);color:var(--ink);
+  min-height:40px;padding:0 14px;border-radius:999px;font-weight:700;cursor:pointer
+}
+.mobile-nav{
+  position:absolute;top:calc(100% + 8px);left:4vw;right:4vw;padding:12px;
+  border:1px solid var(--line);border-radius:18px;background:var(--paper);
+  box-shadow:var(--shadow);z-index:20
+}
+.mobile-nav.open{display:grid}
+.mobile-nav a{padding:12px 14px;border-radius:12px;text-decoration:none;color:var(--ink)}
+.mobile-nav a:hover,.mobile-nav a.active{background:var(--soft);color:var(--accent)}
+.mobile-mode-actions{display:flex;gap:8px;padding:10px 6px 4px;border-top:1px solid var(--line)}
+:focus-visible{outline:3px solid #d69b5f;outline-offset:3px}
 .header-actions{display:flex;gap:8px;align-items:center}
 .icon-btn,.mode-btn{
   border:1px solid var(--line);background:transparent;color:var(--ink);
@@ -223,7 +238,7 @@ img{max-width:100%}
   .page{width:min(94vw,var(--max));padding-top:18px}
   .brand-copy span{display:none}
   .header-inner{width:94vw}
-  .header-actions .mode-btn{display:none}
+  .header-actions>.mode-btn{display:none}
   .hero{min-height:570px;padding:34px;border-radius:24px}
   .hero h1{font-size:44px}
   .stats,.card-grid,.case-grid,.issue-grid{grid-template-columns:1fr}
