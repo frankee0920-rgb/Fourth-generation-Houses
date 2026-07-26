@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
   document.title = `${c.name}｜${D.meta.title}`;
-  root.innerHTML = c.id === "huahong-yunshu" ? renderHuahong(c) : renderGeneric(c);
+  root.innerHTML = c.id === "huahong-yunshu" ? renderHuahong(c)
+    : ["jianzhong-jiuyue-yunzhu","shangqiu-weilai-tianjing"].includes(c.id) ? renderHenanCase(c)
+    : renderGeneric(c);
 });
 
 function renderGeneric(c) {
@@ -34,6 +36,90 @@ function renderGeneric(c) {
 
 function fig(src, title, note) {
   return `<figure class="case-figure"><a href="${src}" target="_blank"><img src="${src}" alt="${title}" loading="lazy"></a><figcaption><strong>${title}</strong><span>${note}</span></figcaption></figure>`;
+}
+
+function renderHenanCase(c) {
+  const configs = {
+    "jianzhong-jiuyue-yunzhu": {
+      no:"02", year:"2025", designer:"徐辉设计", base:"assets/cases/jiuyue-yunzhu/",
+      source:"https://www.archina.com/index.php?a=show&g=works&id=159646&m=index",
+      lead:"郑州市域立体生态建筑试点：从280㎡奇偶层平面，核对挑空客厅、环绕庭院与立面花池如何协同。",
+      facts:[["项目地点","郑州南站片区"],["项目身份","市域立体生态建筑试点"],["重点图纸","280㎡ 4+1室"],["庭院组织","奇偶层换位"],["资料时间","2025-12"],["建成证据","公开资料未覆盖"]],
+      plans:[
+        ["odd-plan.jpg","280㎡奇数层平面","原图标注LDKB+1巨厅、客厅与阳台洄游、下层挑空区域及约8.7m庭院边长。"],
+        ["even-plan.jpg","280㎡偶数层平面","原图显示公共空间和挑空换位，卧室、核心筒及主要湿区基本保持对应。"]
+      ],
+      planNotes:[
+        ["设计方陈述","徐辉设计将户型概括为“挑高空间、LDKB+1巨厅”，强调客厅与阳台充分洄游。"],
+        ["原图可核","奇偶层均标出客厅、餐厅、厨房、书房/茶桌与空中花园的连接关系，并以虚线标示挑空范围。"],
+        ["仍然缺失","公开页未提供完整标准层组合、剖面、结构体系、消防专项和庭院排水节点，因此不评价工程性能。"]
+      ],
+      other:[
+        ["planning.jpg","规划与景观展示","设计方以中十字轴组织住区；该图用于理解公共空间结构，不代替报批总图。"],
+        ["facade.jpg","立面设计表达","设计方称通过控制横向线脚截面、圆弧转角和错层露台减轻体量感。"],
+        ["garden.png","空中庭院效果表达","效果图说明设计意图；不是交付实景，也不能证明植物、排水或维护结果。"]
+      ],
+      audit:[
+        ["户型关系","奇偶层原始平面可查","完整标准层及套型组合缺失"],
+        ["空间尺度","庭院及公共空间有尺寸标注","净活动面积、层高与剖面缺失"],
+        ["立面策略","设计方说明花池、出挑与线脚协同","节点大样及材料耐久性缺失"],
+        ["建成运营","无入住后专业资料","不能评价渗漏、养护和使用率"]
+      ],
+      transfer:"它提供了河南气候区内“公共空间与庭院换位”的直接户型样本；对驻马店真正可转移的是奇偶层协同方法，而不是280㎡面积和郑州试点政策。"
+    },
+    "shangqiu-weilai-tianjing": {
+      no:"03", year:"2025", designer:"基准方中", base:"assets/cases/weilai-tianjing/",
+      source:"https://www.archina.com/index.php?a=show&g=works&id=158680&m=index",
+      lead:"河南地级市的多面积段样本：从总图、标准层、户型到BIM与现场照片，核对“6米庭院”怎样进入工程协同。",
+      facts:[["项目地点","河南商丘"],["产品范围","122–244㎡"],["户型数量","13种大平层"],["庭院组织","奇偶层错位"],["公开阶段","设计+在建"],["设计周期","约8个月（设计方）"]],
+      plans:[
+        ["type-plan-a.png","典型奇偶层户型组 A","同一套型的阳台和露台在奇偶层换位，图中同时标出面宽、进深与设备平台。"],
+        ["type-plan-b.png","跃层/挑空产品组 B","原图包含224㎡与186㎡等不同组合，显示该项目不是单一户型复制。"]
+      ],
+      planNotes:[
+        ["设计方陈述","基准方中称项目设置122–244㎡、13种大平层产品，采用奇偶错层形成约6m私人空中庭院。"],
+        ["原图可核","公开户型可见不同面积段、露台换位、端厅及局部挑空，但小字信息仍需原始PDF或施工图复核。"],
+        ["仍然缺失","公开页未给出每个户型的完整剖面、日照计算、消防论证及空中花园排水种植节点。"]
+      ],
+      other:[
+        ["masterplan.jpg","总平面及主要指标表","图中披露规划用地、容积率、建筑密度、户数等；仍应以后续规划许可文件复核。"],
+        ["standard-floor.jpg","标准层平面原图","可用于核对多户组合、核心筒、连廊与奇偶层露台关系。"],
+        ["garden-detail.png","庭院与立面节点推敲","设计方展示不同节点方案比选，证明项目进行了构造协同，不等于节点已经通过全部专项审查。"],
+        ["bim.png","BIM综合模型","原文展示结构、外装、分缝及成模的协同流程。"],
+        ["coordination.png","建模协同步骤","资料明确列出结构建模、外装建模、分缝建模和综合成模。"],
+        ["construction.png","施工阶段照片","照片可确认部分主体及外围护处于实施阶段，但不能代表整体竣工交付。"]
+      ],
+      audit:[
+        ["规划组织","总图及指标表公开","规划许可原件仍待核"],
+        ["产品体系","多种户型与标准层图公开","户型编号、销售面积对应关系待核"],
+        ["工程协同","BIM、节点比选和现场照片公开","防水、排水、消防专项资料缺失"],
+        ["建成运营","可确认进入施工阶段","整体交付、入住和维护资料缺失"]
+      ],
+      transfer:"商丘与驻马店同属河南地级市，气候和市场层级更接近。该案例可用于比较122–244㎡产品梯度、奇偶层组织及工程协同深度，但不能直接推导驻马店的总价接受度。"
+    }
+  };
+  const x=configs[c.id];
+  return `
+  <div class="breadcrumb"><a href="cases.html">案例库</a><span>/</span><span>河南深度案例 ${x.no}</span></div>
+  <section class="case-study-hero henan-hero"><div><span class="eyebrow">HENAN CASE ${x.no} · ${x.year}</span><h1>${c.name}</h1><p class="hero-lead">${x.lead}</p>
+  <div class="tags"><span class="tag">${c.city}</span><span class="tag">${x.designer}</span><span class="tag">专业设计资料</span><span class="tag">建成结论待核</span></div></div>
+  <aside class="evidence-panel"><div><span>设计资料</span><strong>A</strong><small>设计机构原始发布</small></div><div><span>工程状态</span><strong>B/C</strong><small>按公开照片限定</small></div><div><span>入住反馈</span><strong>—</strong><small>尚无专业评估</small></div></aside></section>
+  <nav class="case-toc"><a href="#facts">项目边界</a><a href="#plan">户型图纸</a><a href="#system">设计系统</a><a href="#audit">证据审计</a><a href="#zmd">驻马店参照</a><a href="#sources">来源</a></nav>
+  <section id="facts" class="study-section"><div class="section-kicker">01 / SCOPE</div><h2>先界定公开资料能够说明什么</h2><div class="fact-strip">${x.facts.map(([k,v])=>`<div><span>${k}</span><strong>${v}</strong></div>`).join("")}</div>
+  <div class="boundary-note"><strong>使用规则</strong><p>本页只转述设计机构明确披露的信息，并对原图作可复核描述。效果图说明空间意图，现场照片说明拍摄时的建设状态；两者都不自动等于交付品质。</p></div></section>
+  <section id="plan" class="study-section"><div class="section-kicker">02 / PLAN</div><h2>奇偶层必须成对阅读，不能只展示一张“明星户型”</h2>
+  <div class="drawing-pair">${x.plans.map(p=>fig(x.base+p[0],p[1],p[2]+" 来源："+x.designer+"，"+x.year+"。")).join("")}</div>
+  <div class="verdict-grid">${x.planNotes.map(([tag,h,p],i)=>`<article class="verdict ${["good","watch","stop"][i]}"><span>${tag}</span><h3>${h}</h3><p>${p}</p></article>`).join("")}</div></section>
+  <section id="system" class="study-section"><div class="section-kicker">03 / DESIGN SYSTEM</div><h2>从户型之外继续核对总图、立面和工程协同</h2>
+  <div class="case-gallery">${x.other.map(p=>fig(x.base+p[0],p[1],p[2]+" 来源："+x.designer+"。")).join("")}</div></section>
+  <section id="audit" class="study-section"><div class="section-kicker">04 / EVIDENCE AUDIT</div><h2>不替资料下结论，只记录证据覆盖程度</h2>
+  <div class="audit-table-wrap"><table class="audit-table"><thead><tr><th>维度</th><th>已有证据</th><th>尚缺材料</th><th>状态</th></tr></thead><tbody>
+  ${x.audit.map(([a,b,d])=>`<tr><th>${a}</th><td>${b}</td><td>${d}</td><td><span class="status cautious">继续核实</span></td></tr>`).join("")}</tbody></table></div></section>
+  <section id="zmd" class="study-section"><div class="section-kicker">05 / ZHUMADIAN</div><h2>作为驻马店参照时，只转移有相同前提的部分</h2><div class="critical-note"><strong>限定性参照</strong><p>${x.transfer}</p></div></section>
+  <section id="sources" class="study-section source-section"><div class="section-kicker">06 / SOURCE</div><h2>原始来源</h2>
+  <div class="source-row"><b>A</b><div><a href="${x.source}" target="_blank" rel="noopener">《${c.name}｜${x.designer}》</a><p>设计机构项目发布，ARCHINA收录；本页图片、项目陈述和阶段信息均从该来源整理。</p></div></div>
+  <div class="source-row"><b>待补</b><div><strong>规划许可、施工图审查、消防专项、竣工验收及入住后评估</strong><p>取得这些资料前，不对整体工程质量和长期使用效果作结论。</p></div></div>
+  <p class="copyright-note">图纸与图片版权归原设计及发布机构所有，本页用于非商业研究与评论；点击图片查看清晰版本。</p></section>`;
 }
 
 function renderHuahong(c) {

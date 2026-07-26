@@ -19,6 +19,7 @@
     tags: ["2025", "设计院原始资料", "平面+剖面", "待建成验证"],
     confidence: "A（设计信息）/ C（使用效果）",
     sourceNote: "设计资料来自华蓝集团发布、ARCHINA收录的项目文章；审批、施工图、交付和入住表现仍需分别补证。"
+    ,cover:"assets/cases/huahong-yunshu/garden-scale.gif"
   };
   const henanCases = [
     {
@@ -31,7 +32,8 @@
       technical:["花池深度与出挑结构协同","横向线脚截面控制","施工图与消防专项待补"],
       operation:["交付后植物状态待核","物业养护边界待核"],tags:["河南","郑州","2025","徐辉设计"],
       confidence:"A（设计陈述）/ C（建成使用）",
-      sourceNote:"主要来源：《建中·九樾云筑｜徐辉设计》，ARCHINA，2025-12-02。审批、施工图、交付与入住资料待补。"
+      sourceNote:"主要来源：《建中·九樾云筑｜徐辉设计》，ARCHINA，2025-12-02。审批、施工图、交付与入住资料待补。",
+      cover:"assets/cases/jiuyue-yunzhu/facade.jpg"
     },
     {
       id:"shangqiu-weilai-tianjing",name:"商丘·未来天境",city:"商丘",region:"河南案例",
@@ -43,7 +45,8 @@
       technical:["约6m挑高","幕墙与施工图前置协同","节点、消防和排水详图待补"],
       operation:["展示区实景不等于住宅交付","长期养护资料待补"],tags:["河南","商丘","2025","基准方中"],
       confidence:"A（设计陈述）/ C（建成使用）",
-      sourceNote:"主要来源：《商丘·未来天境｜基准方中》，ARCHINA，2025。项目整体交付与入住反馈待补。"
+      sourceNote:"主要来源：《商丘·未来天境｜基准方中》，ARCHINA，2025。项目整体交付与入住反馈待补。",
+      cover:"assets/cases/weilai-tianjing/garden-render.jpg"
     }
   ];
   [item,...henanCases].reverse().forEach(entry=>{

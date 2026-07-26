@@ -69,7 +69,7 @@ function setMode(mode){
 }
 function caseCard(c){
   return `<article class="case-card">
-    <div class="case-visual"><span class="case-badge">${c.region} · ${c.status}</span></div>
+    <div class="case-visual ${c.cover?'has-cover':''}" ${c.cover?`style="background-image:linear-gradient(180deg,rgba(10,30,20,.08),rgba(10,30,20,.58)),url('${c.cover}')"`:''}><span class="case-badge">${c.region} · ${c.status}</span></div>
     <div class="case-card-body">
       <div class="case-meta">${c.city} · ${c.developer}</div>
       <h3>${c.name}</h3>
