@@ -60,11 +60,11 @@ function renderHuahong(c) {
   </nav>
 
   <section id="conclusion" class="study-section">
-    <div class="section-kicker">01 / CONCLUSION</div><h2>先说结论：空间创新成立，但“好住宅”尚未被证明</h2>
+    <div class="section-kicker">01 / EVIDENCE SUMMARY</div><h2>先分清：设计方说了什么，图纸能确认什么</h2>
     <div class="verdict-grid">
-      <article class="verdict good"><span>成立</span><h3>平面与剖面是同一套逻辑</h3><p>不是简单外挂大阳台。奇偶层将客餐厅与庭院一起错位，形成连续的两层高公共空间，并主动处理上下户视线。</p></article>
-      <article class="verdict watch"><span>需核验</span><h3>大空间不等于高使用率</h3><p>约40㎡庭院、6.2m挑高带来体验，也同时放大结构、能耗、声环境、坠物、排水和维护责任。</p></article>
-      <article class="verdict stop"><span>不能下结论</span><h3>效果图不能证明交付品质</h3><p>当前公开资料足以评价设计意图，不足以证明植物成活、渗漏控制、物业成本或长期入住表现。</p></article>
+      <article class="verdict good"><span>设计方陈述</span><h3>客餐厅与庭院同步挑空</h3><p>华蓝集团称，奇偶层通过客厅及阳台错位、其他房间尽量保持不变，实现户户挑高客厅和层层大阳台。</p></article>
+      <article class="verdict watch"><span>原图可复核</span><h3>错位与6.2米关系可见</h3><p>公开的奇偶层平面和剖面能够确认空间换位及标注尺寸；但原图不是完整施工图，不能据此评价所有技术性能。</p></article>
+      <article class="verdict stop"><span>资料未覆盖</span><h3>交付和长期使用不能评价</h3><p>原文没有提供完整交付、跨季节入住、渗漏、植物成活或物业成本资料，本页不对此作正负判断。</p></article>
     </div>
   </section>
 
@@ -101,17 +101,17 @@ function renderHuahong(c) {
       ${fig(base+"privacy-section.gif","私密性对比剖面","设计方将本案与早期产品对比，主张避免他户房间直接俯视庭院。")}
       ${fig(base+"daylight-section.gif","日照及层高示意","6.2m高度相对3.6m庭院进深有利于开敞，但不是日照时数计算书。")}
     </div>
-    <div class="critical-note"><strong>我们的判断</strong><p>剖面确实减少“上一户卧室压在下一户庭院上方”的直接对视，这是可从图纸验证的进步。但图中太阳射线只是示意，不能替代全年日照、天空可视因子、风环境与能耗模拟。</p></div>
+    <div class="critical-note"><strong>基于原图的限定性解读（非设计方原话）</strong><p>剖面表达了减少“上一户卧室直接俯视下一户庭院”的设计意图；是否在全部楼栋、全部户型成立，仍需完整标准层和视线分析图。图中的太阳射线属于示意，不能替代日照计算书、风环境与能耗模拟。</p></div>
   </section>
 
   <section id="audit" class="study-section">
-    <div class="section-kicker">05 / AUDIT</div><h2>客观设计审计：把优势与代价放在同一张表里</h2>
+    <div class="section-kicker">05 / EVIDENCE AUDIT</div><h2>证据审计：原图支持到哪里，问题就写到哪里</h2>
     <div class="audit-table-wrap"><table class="audit-table">
-      <thead><tr><th>维度</th><th>从公开图纸可确认</th><th>潜在代价 / 待核问题</th><th>当前判断</th></tr></thead>
+      <thead><tr><th>维度</th><th>原文或原图明确内容</th><th>公开资料未回答的问题</th><th>证据状态</th></tr></thead>
       <tbody>
-        <tr><th>空间关系</th><td>LDKBG连续，庭院直接服务家庭公共活动</td><td>挑空减少同层可计量空间，家具与空调分区需深化</td><td><span class="status positive">偏正面</span></td></tr>
-        <tr><th>私密性</th><td>客厅与庭院同步错位，减少异户俯视</td><td>侧向邻户、对楼视线与声传播尚无完整分析</td><td><span class="status cautious">有改进</span></td></tr>
-        <tr><th>采光通风</th><td>6.2m高 / 约3.6m深，几何开敞度较好</td><td>朝向、楼间距、植物冠幅和区域风雨共同影响结果</td><td><span class="status cautious">需模拟</span></td></tr>
+        <tr><th>空间关系</th><td>设计方定义LDKBG连续，并提供奇偶层平面</td><td>净使用面积、家具布置及空调分区未提供</td><td><span class="status positive">有原图</span></td></tr>
+        <tr><th>私密性</th><td>设计方提供上下户视线对比剖面</td><td>侧向邻户、对楼视线及全部户型验证未提供</td><td><span class="status cautious">局部证据</span></td></tr>
+        <tr><th>采光通风</th><td>原图标注6.2m高度及约3.6m庭院进深</td><td>日照计算、天空可视因子和风环境报告未提供</td><td><span class="status cautious">尺寸可核</span></td></tr>
         <tr><th>结构消防</th><td>平面尽量保持核心筒和私区叠合</td><td>大出挑、挑空防火分隔、救援条件和坠物风险未公开</td><td><span class="status pending">待专项</span></td></tr>
         <tr><th>排水绿化</th><td>设计表达包含花池与活动面</td><td>覆土厚度、荷载、防水、主排/溢流、灌溉及检修路径缺失</td><td><span class="status pending">资料不足</span></td></tr>
         <tr><th>运营维护</th><td>无可核验的交付后资料</td><td>统一养护边界、费用、植物替换和违规封闭均未知</td><td><span class="status pending">不能评价</span></td></tr>

@@ -20,7 +20,33 @@
     confidence: "A（设计信息）/ C（使用效果）",
     sourceNote: "设计资料来自华蓝集团发布、ARCHINA收录的项目文章；审批、施工图、交付和入住表现仍需分别补证。"
   };
-  if (!window.SITE_DATA.cases.some(c => c.id === item.id)) {
-    window.SITE_DATA.cases.unshift(item);
-  }
+  const henanCases = [
+    {
+      id:"jianzhong-jiuyue-yunzhu",name:"建中·九樾云筑",city:"郑州",region:"河南案例",
+      developer:"建中集团",status:"试点 / 在建待核",delivery:"交付状态待核",area:"待施工图核实",
+      type:"郑州市域立体生态建筑试点",garden:"错层空中花园",climate:"夏热冬冷",
+      summary:"徐辉设计2025年公开的郑州立体生态建筑试点。现阶段用于研究规划布局、露台花池深度、大尺度出挑与轻量化立面的协同，不用于证明交付效果。",
+      why:"设计机构明确披露其四代住宅研发背景与结构、花池、线脚协同过程，是河南近期专业设计样本。",
+      spatial:["中十字轴住区布局","错层露台与立面一体化","空中花园空间待户型图深化"],
+      technical:["花池深度与出挑结构协同","横向线脚截面控制","施工图与消防专项待补"],
+      operation:["交付后植物状态待核","物业养护边界待核"],tags:["河南","郑州","2025","徐辉设计"],
+      confidence:"A（设计陈述）/ C（建成使用）",
+      sourceNote:"主要来源：《建中·九樾云筑｜徐辉设计》，ARCHINA，2025-12-02。审批、施工图、交付与入住资料待补。"
+    },
+    {
+      id:"shangqiu-weilai-tianjing",name:"商丘·未来天境",city:"商丘",region:"河南案例",
+      developer:"待核",status:"在建 / 展示区",delivery:"整体交付待核",area:"122–244㎡",
+      type:"地级市多面积段改善住宅",garden:"奇偶层错位、约6m挑高庭院",climate:"夏热冬冷",
+      summary:"基准方中2025年公开的商丘住宅项目，包含13种大平层产品及奇偶层错位空中庭院，适合作为与驻马店城市层级和气候更接近的产品样本。",
+      why:"专业设计机构披露了产品谱系、错层庭院、立面推敲和节点协同过程，本地可比性高于南方案例。",
+      spatial:["122–244㎡多面积段","奇偶层错层庭院","端厅、甲板阳台与客厅挑空组合"],
+      technical:["约6m挑高","幕墙与施工图前置协同","节点、消防和排水详图待补"],
+      operation:["展示区实景不等于住宅交付","长期养护资料待补"],tags:["河南","商丘","2025","基准方中"],
+      confidence:"A（设计陈述）/ C（建成使用）",
+      sourceNote:"主要来源：《商丘·未来天境｜基准方中》，ARCHINA，2025。项目整体交付与入住反馈待补。"
+    }
+  ];
+  [item,...henanCases].reverse().forEach(entry=>{
+    if (!window.SITE_DATA.cases.some(c=>c.id===entry.id)) window.SITE_DATA.cases.unshift(entry);
+  });
 })();

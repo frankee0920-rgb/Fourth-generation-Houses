@@ -127,6 +127,17 @@ img{max-width:100%}
 .feature-card h3{font-size:25px;line-height:1.25;margin:40px 0 12px}
 .feature-card p{color:var(--muted);margin:0}
 .feature-card a{margin-top:auto;text-decoration:none;color:var(--accent);font-weight:700}
+.definition-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.definition-core{padding:34px;border-radius:24px;background:var(--accent);color:#fff}
+.definition-core>span{font-size:11px;letter-spacing:.12em;opacity:.7}.definition-core h3{font-size:27px;line-height:1.5}.definition-core p{opacity:.72}
+.definition-points{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.definition-points div{padding:22px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+.definition-points b,.definition-points span{display:block}.definition-points b{color:var(--accent);margin-bottom:9px}.definition-points span{font-size:13px;color:var(--muted)}
+.timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.timeline-grid article{padding:26px;background:var(--paper);border:1px solid var(--line);border-radius:20px}
+.timeline-grid time{font-size:12px;color:var(--accent2);font-weight:800}.timeline-grid h3{font-size:19px}.timeline-grid p{font-size:14px;color:var(--muted)}
+.source-inline{margin-top:14px;padding:16px 20px;background:var(--soft);border-radius:14px;font-size:12px;color:var(--muted)}
+.source-inline a{color:var(--accent)}
 .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .case-card{overflow:hidden;transition:.25s transform,.25s box-shadow}
 .case-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
@@ -279,6 +290,7 @@ img{max-width:100%}
   .hero{grid-template-columns:1fr;padding:50px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .card-grid,.case-grid{grid-template-columns:repeat(2,1fr)}
+  .definition-layout{grid-template-columns:1fr}.timeline-grid{grid-template-columns:repeat(2,1fr)}
   .page-hero,.detail-grid{grid-template-columns:1fr}
   .case-study-hero{grid-template-columns:1fr}.evidence-panel{grid-template-columns:repeat(3,1fr)}
   .fact-strip{grid-template-columns:repeat(3,1fr)}.fact-strip div:nth-child(3){border-right:0}
@@ -291,6 +303,7 @@ img{max-width:100%}
   .hero{min-height:570px;padding:34px;border-radius:24px}
   .hero h1{font-size:44px}
   .stats,.card-grid,.case-grid,.issue-grid{grid-template-columns:1fr}
+  .definition-points,.timeline-grid{grid-template-columns:1fr}
   .section{padding-top:54px}
   .section-head{align-items:flex-start;flex-direction:column}
   .page-hero{padding-top:34px}
